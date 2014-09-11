@@ -1,0 +1,30 @@
+{
+  "name": "vienna_hacker_lunch",
+  "version": "0.1.0",
+  "description": "Yet another amazing AngularJS app",
+  "keywords": [
+    "angular"
+  ],
+  "homepage": "https://github.com/davkal/vienna-hacker-lunch",
+  "bugs": "https://github.com/davkal/vienna-hacker-lunch/issues",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": "https://github.com/davkal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davkal/vienna-hacker-lunch.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "bootstrap": "3.2.0",
+    "angular-animate": "^1.3.0-rc.1",
+    "angular-route": "^1.3.0-rc.1",
+    "angular": "^1.3.0-rc.1"
+  }
+}
