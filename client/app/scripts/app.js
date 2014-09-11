@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('davkal.ViennaHackerLunch', ['ngAnimate', 'ngRoute'])
+angular.module('davkal.ViennaHackerLunch', ['ngAnimate', 'ngResource', 'ngRoute'])
 
   .constant('version', 'v0.1.0')
 
@@ -12,8 +12,9 @@ angular.module('davkal.ViennaHackerLunch', ['ngAnimate', 'ngRoute'])
       .when('/', {
         templateUrl: 'views/home.html'
       })
-      .when('/features', {
-        templateUrl: 'views/features.html'
+      .when('/restaurants', {
+        templateUrl: 'views/restaurants.html',
+        controller: 'RestaurantsCtrl'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html'
@@ -22,5 +23,10 @@ angular.module('davkal.ViennaHackerLunch', ['ngAnimate', 'ngRoute'])
         redirectTo: '/'
       });
 
-  });
+  })
 
+  .factory('Restaurant', ['$resource', function($resource) {
+      return $resource('/api/restaurants/:id.json', null, {
+          'update': { method:'PUT' }
+      });
+  }]);
