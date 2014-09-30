@@ -11,9 +11,9 @@ module ViennaLunch::Restaurants::Podium
   def self.today
     doc = Nokogiri::HTML(open(MENU_URL))
 
-    meat = doc.xpath("//table[4]//font[1]/text()")
-    vegetarian = doc.xpath("//table[7]//font[1]/text()")
+    menu1 = doc.xpath("//table[4]//font[1]/text()")
+    menu2 = doc.xpath("//table[7]//font[1]/text()")
 
-    "#{meat} or #{vegetarian}"
+    "I. #{menu1}, II. #{menu2}"
   end
 end
