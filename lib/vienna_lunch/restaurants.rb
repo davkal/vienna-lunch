@@ -1,6 +1,7 @@
 module ViennaLunch::Restaurants
   GLOB = "lib/vienna_lunch/restaurants/*.rb"
   LIST = [
+    ViennaLunch::Restaurants::Figar,
     ViennaLunch::Restaurants::Podium
   ]
 
