@@ -8,7 +8,7 @@ module ViennaLunch::Restaurants::Podium
   LOCATION = ""
   MENU_URL = 'http://www.restaurant-podium.at/menue.html'
   
-  def self.today
+  def self.lunch
     doc = Nokogiri::HTML(open(MENU_URL))
 
     menu1 = doc.xpath("//table[4]//font[1]/text()")

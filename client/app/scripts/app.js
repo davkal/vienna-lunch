@@ -26,7 +26,7 @@ angular.module('davkal.ViennaHackerLunch', ['ngAnimate', 'ngResource', 'ngRoute'
   })
 
   .factory('Restaurant', ['$resource', function($resource) {
-      return $resource('/api/restaurants/:id.json', null, {
+      return $resource('/api/restaurants/index/:id.json', null, {
           'update': { method:'PUT' }
       });
   }]);

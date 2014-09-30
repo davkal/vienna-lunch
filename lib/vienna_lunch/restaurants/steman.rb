@@ -8,7 +8,7 @@ module ViennaLunch::Restaurants::Steman
   LOCATION = ""
   MENU_URL = 'http://www.steman.at'
 
-  def self.today
+  def self.lunch
     doc = Nokogiri::HTML(open(MENU_URL))
 
     weekday_today = Date.today.wday - 1 # starting week on monday

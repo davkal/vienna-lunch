@@ -7,7 +7,7 @@ module ViennaLunch::Restaurants::Wirr
   LOCATION = ""
   MENU_URL = 'https://www.facebook.com/feeds/page.php?id=104347469632226&format=rss20'
   
-  def self.today
+  def self.lunch
     doc = Nokogiri::XML(open(MENU_URL))
 
     return doc.xpath('//item[1]/title').text

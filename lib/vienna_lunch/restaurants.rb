@@ -22,8 +22,9 @@ module ViennaLunch::Restaurants
     return LIST.map do |restaurant|
       {
         name: restaurant::NAME,
+        address: restaurant::ADDRESS,
         location: restaurant::LOCATION,
-        today: restaurant::today,
+        lunch: restaurant::lunch,
       }
     end
   end

@@ -10,7 +10,7 @@ module ViennaLunch::Restaurants::Ulrich
 
   WEEKDAYS = ['MONTAG', 'DIENSTAG', 'MITTWOCH', 'DONNERSTAG', 'FREITAG']
 
-  def self.today
+  def self.lunch
     doc = Nokogiri::HTML(open(MENU_URL))
 
     food = ''
