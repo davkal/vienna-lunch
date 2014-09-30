@@ -16,4 +16,4 @@
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-ViennaHackerLunch::Application.config.secret_token = 'b6d0aab6e1a78dd20cd85b2a91087cf54066d9d13c0ca540fa67487aa17d0d1113ec3271a27ac6bca90833633d1c43b0cc58c8d15d1a9b27f9a84af4d100fa38'
+ViennaLunch::Application.config.secret_token = 'b6d0aab6e1a78dd20cd85b2a91087cf54066d9d13c0ca540fa67487aa17d0d1113ec3271a27ac6bca90833633d1c43b0cc58c8d15d1a9b27f9a84af4d100fa38'

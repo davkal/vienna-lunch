@@ -13,7 +13,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module ViennaHackerLunch
+module ViennaLunch
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -35,5 +35,7 @@ module ViennaHackerLunch
 			  request_specs: false,
 			  controller_specs: true
 	  end
+
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
