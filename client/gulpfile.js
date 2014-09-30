@@ -12,7 +12,7 @@ var fs = require('fs');
 
 var paths = {
   src: 'app',
-  dist: 'dist',
+  dist: '../public',
   tmp: '.tmp',
   scripts: 'scripts/**/*.js',
   index: 'index.html',
@@ -161,7 +161,7 @@ gulp.task('views:src', function() {
     // index
     gulp.src(paths.index, {cwd: paths.src, base: paths.src})
       .pipe(changed(paths.tmp))
-      .pipe(wiredep({directory: 'app/bower_components', exclude: [/jquery/, /js\/bootstrap/]}))
+      .pipe(wiredep({directory: 'app/bower_components', exclude: []}))
       .pipe(gulp.dest(paths.tmp))
       .pipe(connect.reload())
   );
@@ -185,7 +185,7 @@ gulp.task('views:dist', function() {
   var combined = combine(
     // views
     gulp.src(paths.views, {cwd: paths.src, base: paths.src})
-      .pipe(htmlmin({removeComments: true, collapseWhitespace: true}))
+      //.pipe(htmlmin({removeComments: true, collapseWhitespace: true}))
       .pipe(ngtemplate({module: pkg.name}))
       .pipe(ngmin())
       .pipe(concat('views.tpl.js', {process: function(src) { return '// Source: ' + path.basename(this.path) + '\n' + (src.trim() + '\n').replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1'); }}))
@@ -198,7 +198,7 @@ gulp.task('views:dist', function() {
       .pipe(gulp.dest(path.join(paths.dist, 'scripts'))),
     // index
     gulp.src(paths.index, {cwd: paths.src, base: paths.src})
-      .pipe(wiredep({directory: 'app/bower_components', exclude: [/jquery/, /js\/bootstrap/]}))
+      .pipe(wiredep({directory: 'app/bower_components', exclude: []}))
       .pipe(nginclude({assetsDirs: [paths.tmp]}))
       .pipe(through2.obj(function(file, encoding, next) {
         file.contents = new Buffer(file.contents.toString().replace(/<\/body>/, '  \n<script src="scripts/views.tpl.min.js"></script>\n\n</body>'));
@@ -214,7 +214,7 @@ gulp.task('views:dist', function() {
           next(null, file);
         }), 'concat'],
       }))
-      .pipe(htmlmin({removeComments: true, collapseWhitespace: true}))
+      //.pipe(htmlmin({removeComments: true, collapseWhitespace: true}))
       .pipe(gulp.dest(paths.dist))
   );
 

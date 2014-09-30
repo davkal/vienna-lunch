@@ -2,12 +2,12 @@
  
 /**
  * @ngdoc function
- * @name davkal.ViennaHackerLunch.controller:RestaurantsCtrl
+ * @name vienna-lunch.controller:RestaurantsCtrl
  * @description
  * # RestaurantsCtrl
- * Controller of the davkal.ViennaHackerLunch
+ * Controller of the vienna-lunch
  **/
-angular.module('davkal.ViennaHackerLunch')
+angular.module('viennaLunch')
     .controller('RestaurantsCtrl', ['$scope', 'Restaurant', function ($scope, Restaurant) {
         $scope.restaurants = Restaurant.query();
     }]);

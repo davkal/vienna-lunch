@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('davkal.ViennaHackerLunch')
+angular.module('viennaLunch')
 
   .controller('MainCtrl', function($scope, $location, version) {
 

@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('davkal.ViennaHackerLunch')
+angular.module('viennaLunch')

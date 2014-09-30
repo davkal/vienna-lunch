@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('davkal.ViennaHackerLunch')
+angular.module('viennaLunch')
 
   .filter('time', function() {
     return function(obj) {

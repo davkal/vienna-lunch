@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('davkal.ViennaHackerLunch', ['ngAnimate', 'ngResource', 'ngRoute'])
+angular.module('viennaLunch', ['ngAnimate', 'ngResource', 'ngRoute'])
 
   .constant('version', 'v0.1.0')
 
@@ -26,7 +26,7 @@ angular.module('davkal.ViennaHackerLunch', ['ngAnimate', 'ngResource', 'ngRoute'
   })
 
   .factory('Restaurant', ['$resource', function($resource) {
-      return $resource('/api/restaurants/index/:id.json', null, {
+      return $resource('/restaurants/index/:id.json', null, {
           'update': { method:'PUT' }
       });
   }]);

@@ -1,20 +1,20 @@
 {
-  "name": "vienna_hacker_lunch",
+  "name": "viennaLunch",
   "version": "0.1.0",
-  "description": "Yet another amazing AngularJS app",
+  "description": "Displays the lunch menu of restaurants in Vienna.",
   "keywords": [
     "angular"
   ],
-  "homepage": "https://github.com/davkal/vienna-hacker-lunch",
-  "bugs": "https://github.com/davkal/vienna-hacker-lunch/issues",
+  "homepage": "https://github.com/davkal/vienna-lunch",
+  "bugs": "https://github.com/davkal/vienna-lunch/issues",
   "author": {
-    "name": "",
-    "email": "",
+    "name": "David Kaltschmidt",
+    "email": "david.kaltschmidt@gmail.com",
     "url": "https://github.com/davkal"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/davkal/vienna-hacker-lunch.git"
+    "url": "https://github.com/davkal/vienna-lunch.git"
   },
   "licenses": [
     {
