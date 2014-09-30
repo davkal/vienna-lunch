@@ -10,6 +10,8 @@ gem 'sqlite3'
 
 gem 'rspec-rails'
 
+gem 'nokogiri'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
