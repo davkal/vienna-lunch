@@ -287,4 +287,4 @@ gulp.task('serve', function() {
   runSequence('clean:tmp', ['views:src', 'styles:src', 'connect:src'], ['open:src', 'watch:src']);
 });
 gulp.task('serve:dist', ['connect:dist', 'open:dist']);
-gulp.task('serve:dist', ['connect:dist', 'open:dist']);
+gulp.task('heroku:production', ['build']);
