@@ -10,6 +10,6 @@ module ViennaLunch::Restaurants::Figar
   def self.lunch
     doc = Nokogiri::XML(open(MENU_URL))
 
-    return doc.xpath('//item[1]/title').text
+    return doc.xpath('//item[1]/description').text
   end
 end
