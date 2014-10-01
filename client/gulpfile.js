@@ -13,7 +13,7 @@ var fs = require('fs');
 var paths = {
   src: 'app',
   dist: '../public',
-  tmp: 'tmp',
+  tmp: '.tmp',
   scripts: 'scripts/**/*.js',
   index: 'index.html',
   views: 'views/**/*.html',
