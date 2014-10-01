@@ -4,13 +4,16 @@ gem 'rails', '4.1.6'
 
 gem 'rails-api'
 
-gem 'spring', :group => :development
-
-gem 'sqlite3'
-
-gem 'rspec-rails'
-
 gem 'nokogiri'
+
+group :development, :test do
+  gem 'spring',      '1.1.3'
+  gem 'rspec-rails'
+end
+
+group :production do
+  gem 'rails_12factor', '0.0.2'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
