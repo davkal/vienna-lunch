@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e 
 
+# Delete old public dist
+rm -rf public/*
 # Delete current deploy branch
 git branch -D deploy
 # Create new deploy branch based on master
