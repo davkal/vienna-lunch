@@ -6,6 +6,6 @@ RSpec.describe RestaurantsController, :type => :controller do
 
     expect(response).to be_success
     json = JSON.parse(response.body)
-    expect(json.length).to eq(1)
+    expect(json[0]['address']).to include("Wien")
   end
 end
