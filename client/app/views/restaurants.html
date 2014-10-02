@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="col-md-4 col-sm-6" ng-repeat="restaurant in restaurants">
-		<div class="panel panel-default">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">{{restaurant.name}}</h3>
+		<div class="restaurant">
+		  <div class="restaurant-heading">
+		    <h3 class="restaurant-title">{{restaurant.name}}</h3>
 		  </div>
-		  <div class="panel-body" ng-bind-html="restaurant.lunch">
+		  <div class="restaurant-body" ng-bind-html="restaurant.lunch">
 		  </div>
 		</div>
 	</div>
