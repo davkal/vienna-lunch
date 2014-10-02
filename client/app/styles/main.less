@@ -58,7 +58,9 @@ body {
 // Header
 //
 .masthead {
-  background-color: rgba(255,255,255,.125);
+  background-color: lighten(@base-background-color, 5%);
+  z-index: 100;
+  border-bottom: thin solid white;
 }
 .masthead-brand {
   margin-top: 10px;
@@ -124,7 +126,10 @@ body {
 
 .mastfoot {
   color: #999; // IE8 proofing
-  color: rgba(255,255,255,.5);
+  background-color: darken(@base-background-color, 5%);
+  .inner {
+    padding: 10px 30px;
+  }
 }
 
 
