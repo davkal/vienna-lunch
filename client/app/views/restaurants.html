@@ -4,8 +4,7 @@
 		  <div class="panel-heading">
 		    <h3 class="panel-title">{{restaurant.name}}</h3>
 		  </div>
-		  <div class="panel-body">
-		    {{restaurant.lunch}}
+		  <div class="panel-body" ng-bind-html="restaurant.lunch">
 		  </div>
 		</div>
 	</div>

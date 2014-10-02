@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('viennaLunch', ['ngAnimate', 'ngResource', 'ngRoute'])
+angular.module('viennaLunch', ['ngAnimate', 'ngResource', 'ngRoute', 'ngSanitize'])
 
   .constant('version', 'v0.1.0')
 
