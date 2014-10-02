@@ -2,8 +2,12 @@
 
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = cached_restaurants
-    render json: @restaurants
+    if Rails.env.development?
+      render :file => 'lib/vienna_lunch/support/restaurants.json', content_type: "application/json"
+    else
+      @restaurants = cached_restaurants
+      render json: @restaurants
+    end
   end
 
   def cached_restaurants
