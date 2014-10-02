@@ -60,7 +60,7 @@ gulp.task('connect:src', function() {
         return [ (function() {
             var url = require('url');
             var proxy = require('proxy-middleware');
-            var options = url.parse('http://localhost:3000');
+            var options = url.parse('http://localhost:3000/api');
             options.route = '/api';
             return proxy(options);
         })()]

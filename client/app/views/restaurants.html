@@ -1,5 +1,12 @@
-<h1>Restaurants</h1>
- 
-<ul ng-repeat="restaurant in restaurants">
-    <li>{{restaurant.name}} <small>{{restaurant.lunch}}</small></li>
-</ul>
+<div class="row">
+	<div class="col-md-4 col-sm-6" ng-repeat="restaurant in restaurants">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">{{restaurant.name}}</h3>
+		  </div>
+		  <div class="panel-body">
+		    {{restaurant.lunch}}
+		  </div>
+		</div>
+	</div>
+</div>
