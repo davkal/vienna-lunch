@@ -7,7 +7,7 @@ module ViennaLunch::Restaurants::Figar
   LOCATION = ""
   MENU_URL = 'https://www.facebook.com/feeds/page.php?id=719106121449593&format=json'
   
-  def self.lunch(doc)
+  def self.lunch(doc = nil)
     doc ||= JSON.load(open(MENU_URL))
     food = 'no lunch found'
     doc['entries'].each do |entry|
