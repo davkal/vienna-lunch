@@ -17,13 +17,12 @@ module ViennaLunch::Restaurants::Podium
     food = []
     doc.xpath(".//table").each do |table|
       text = table.xpath('.//font[1]/text()').to_s
-      if text['menü']
-        menu = text
-      end
       if !menu.nil?
         food.push(menu)
         food.push(text)
         menu = nil
+      elsif text[/(fleisch|vegetarisch)/]
+        menu = text
       end
     end
 
