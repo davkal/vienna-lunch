@@ -4,12 +4,11 @@ require 'open-uri'
 module ViennaLunch::Restaurants::Woracziczky
   NAME = "Woracziczky"
   ADDRESS = "Spengergasse 52, 1050 Wien"
-  LOCATION = ""
+  LOCATION = [48.189289,16.353079]
+  URL = 'http://www.woracziczky.at/'
   MENU_URL = 'https://www.facebook.com/feeds/page.php?id=350394680695&format=json'
   
   def self.lunch
-    doc = JSON.load(open(MENU_URL))
-
-    return doc['entries'][0]['content']
+    return facebook_lunch(MENU_URL, /(menü|heut|mittag)/i)
   end
 end

@@ -41,7 +41,7 @@ def facebook_lunch(url, words = nil)
 
   hash['entries'].each do |entry|
     if entry['updated'][today]
-      if words && entry['content'][/(heute|kochen|gibt)/i]
+      if words && entry['content'][words]
         food = entry['content']
         break
       end

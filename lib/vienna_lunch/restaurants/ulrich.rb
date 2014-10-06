@@ -5,7 +5,8 @@ require 'open-uri'
 module ViennaLunch::Restaurants::Ulrich
   NAME = "Ulrich"
   ADDRESS = "St. Ulrichplatz 1, 1070 Wien"
-  LOCATION = ""
+  LOCATION = [48.2047882,16.3528004]
+  URL = 'http://ulrichwien.at/'
   MENU_URL = 'http://ulrichwien.at/speisekarte/'
 
   WEEKDAYS = ['MONTAG', 'DIENSTAG', 'MITTWOCH', 'DONNERSTAG', 'FREITAG']

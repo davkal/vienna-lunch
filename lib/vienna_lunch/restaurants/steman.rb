@@ -5,7 +5,8 @@ require 'open-uri'
 module ViennaLunch::Restaurants::Steman
   NAME = "Steman"
   ADDRESS = "Otto-Bauer-Gasse 7, 1060 Wien"
-  LOCATION = ""
+  LOCATION = [48.195551,16.34907]
+  URL = "http://www.steman.at/"
   MENU_URL = 'http://www.steman.at'
 
   def self.lunch
@@ -13,9 +14,13 @@ module ViennaLunch::Restaurants::Steman
 
     weekday_today = Date.today.wday - 1 # starting week on monday
     todays_menu = doc.css('#wochenkarte .tagesmenu')[weekday_today]
-    menu1 = todays_menu.css('.hauptspeise').text
-    menu2 = todays_menu.css('.tagesteller').text
+    if todays_menu
+      menu1 = todays_menu.css('.hauptspeise').text
+      menu2 = todays_menu.css('.tagesteller').text
 
-    "I. #{menu1}, II. #{menu2}"
+      return "Hauptspeise: #{menu1}, Tagesteller: #{menu2}"
+    else
+      return ""
+    end
   end
 end

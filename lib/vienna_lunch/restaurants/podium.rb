@@ -5,15 +5,28 @@ require 'open-uri'
 module ViennaLunch::Restaurants::Podium
   NAME = "Podium"
   ADDRESS = "Westbahnstrasse 33, 1070 Wien"
-  LOCATION = ""
+  LOCATION = [48.201762,16.341378]
+  URL = 'http://www.restaurant-podium.at/'
   MENU_URL = 'http://www.restaurant-podium.at/menue.html'
   
   def self.lunch
     doc = Nokogiri::HTML(open(MENU_URL))
+    doc.encoding = 'utf-8'
 
-    menu1 = doc.xpath("//table[4]//font[1]/text()")
-    menu2 = doc.xpath("//table[7]//font[1]/text()")
+    menu = nil
+    food = []
+    doc.xpath(".//table").each do |table|
+      text = table.xpath('.//font[1]/text()').to_s
+      if text['menü']
+        menu = text
+      end
+      if !menu.nil?
+        food.push(menu)
+        food.push(text)
+        menu = nil
+      end
+    end
 
-    "I. #{menu1}, II. #{menu2}"
+    return food.join(' ')
   end
 end
