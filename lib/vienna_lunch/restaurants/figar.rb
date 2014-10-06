@@ -1,5 +1,4 @@
 require 'json'
-require 'open-uri'
 
 module ViennaLunch::Restaurants::Figar
   NAME = "Figar"
@@ -7,19 +6,7 @@ module ViennaLunch::Restaurants::Figar
   LOCATION = ""
   MENU_URL = 'https://www.facebook.com/feeds/page.php?id=719106121449593&format=json'
   
-  def self.lunch(doc = nil)
-    doc ||= JSON.load(open(MENU_URL))
-    food = 'no lunch found'
-    doc['entries'].each do |entry|
-      if entry['content'][/(heute|kochen|gibt)/i]
-        food = entry['content']
-        break
-      end
-    end
-
-    # prefix links
-    food.gsub!('href="', "target=\"#{NAME}\" href=\"#{doc['link']}")
-
-    return food
+  def self.lunch()
+    return facebook_lunch(MENU_URL, /(heute|kochen|gibt)/i)
   end
 end

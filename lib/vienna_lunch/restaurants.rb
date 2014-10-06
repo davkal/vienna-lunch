@@ -1,3 +1,5 @@
+require 'open-uri'
+
 module ViennaLunch::Restaurants
   GLOB = "lib/vienna_lunch/restaurants/*.rb"
   LIST = [
@@ -30,3 +32,24 @@ module ViennaLunch::Restaurants
   end
 end
 
+
+# look for lunch in FB feed entries
+def facebook_lunch(url, words = nil)
+  food = ''
+  today = Date.today.to_s
+  hash = JSON.load(open(url))
+
+  hash['entries'].each do |entry|
+    if entry['updated'][today]
+      if words && entry['content'][/(heute|kochen|gibt)/i]
+        food = entry['content']
+        break
+      end
+    end
+  end
+
+  # prefix links
+  food.gsub!('href="', "target=\"#{url}\" href=\"#{hash['link']}")
+
+  return food
+end
