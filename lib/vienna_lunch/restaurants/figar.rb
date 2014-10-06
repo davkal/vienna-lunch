@@ -17,6 +17,9 @@ module ViennaLunch::Restaurants::Figar
       end
     end
 
+    # prefix links
+    food.gsub!('href="', "target=\"#{NAME}\" href=\"#{doc['link']}")
+
     return food
   end
 end
