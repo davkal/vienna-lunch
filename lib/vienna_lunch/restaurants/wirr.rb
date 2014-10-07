@@ -1,4 +1,3 @@
-require 'json'
 require 'open-uri'
 
 module ViennaLunch::Restaurants::Wirr
@@ -6,9 +5,17 @@ module ViennaLunch::Restaurants::Wirr
   ADDRESS = "Burggasse 70, 1070 Wien"
   LOCATION = [48.204404,16.347298]
   URL = 'http://wirr.at/?page_id=107'
-  MENU_URL = 'https://www.facebook.com/feeds/page.php?id=104347469632226&format=json'
+  MENU_URL = URL
   
   def self.lunch
-    return facebook_lunch(MENU_URL, 'II')
+    doc = Nokogiri::HTML(open(MENU_URL))
+
+    weekday_today = Date.today.wday # skipping first <p>
+    todays_menu = doc.css('.post-excerpt p')[weekday_today]
+    if todays_menu
+      return todays_menu.text
+    else
+      return ""
+    end
   end
 end

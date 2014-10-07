@@ -9,6 +9,6 @@ module ViennaLunch::Restaurants::Salzberg
   MENU_URL = 'https://www.facebook.com/feeds/page.php?id=169366811687&format=json'
   
   def self.lunch
-    return facebook_lunch(MENU_URL, "Tagesteller")
+    return facebook_lunch(MENU_URL, /(Tagesteller|Menü)/i)
   end
 end
