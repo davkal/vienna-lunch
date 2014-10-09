@@ -1,0 +1,109 @@
+<!doctype html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en" ng-app="viennaLunch"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="viennaLunch"> <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vienna Lunch</title>
+  <meta name="description" content="Display lunch menus for restaurants in Vienna">
+
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+
+  <!-- Sets initial viewport load and disables zooming  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Set a shorter title for iOS6 devices when saved to home screen -->
+  <meta name="apple-mobile-web-app-title" content="ViennaLunch">
+
+  <!-- Properties for Google+ snippets -->
+  <meta property="og:title" content="ViennaLunch">
+  <meta property="og:description" content="Display lunch menus for restaurants in Vienna">
+  <meta property="og:image" content="https://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
+
+  <!-- Author of this application -->
+  <link rel="author" href="https://github.com/davkal">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="styles/components.min.css"/>
+
+  <link rel="stylesheet" href="styles/main.min.css"/>
+
+</head>
+
+<body ontouchstart="" ng-controller="MainCtrl">
+
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="fluid-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+<!-- ngInclude: 'views/partials/header.html' -->
+<h1 class="masthead-brand">
+	<img class="arabesque arabesque-left hidden-xs" src="images/arabesque.png">
+	Vienna Lunch
+	<img class="arabesque arabesque-right hidden-xs" src="images/arabesque-right.png">
+</h1>
+
+<div class="caption"><em>A fine selection of today&apos;s Vienna lunch menus.</em></div>
+
+<a href="https://github.com/davkal/vienna-lunch"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+<!--/ngInclude: 'views/partials/header.html' -->
+</div>
+        </div>
+        <div class="content">
+          <div class="inner" ng-view=""></div>
+        </div>
+        <div class="mastfoot">
+          <div class="inner">
+<!-- ngInclude: 'views/partials/footer.html' -->
+<div class="pull-right">
+	<span class="built">Built by David Kaltschmidt. To add more restaurants, go to <a href="https://github.com/davkal/vienna-lunch" target="github">GitHub</a>.</span>
+	<a href="https://twitter.com/davkals" class="twitter-follow-button" data-show-count="false">@davkals</a>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-text="Just found a good lunch spot in Vienna" data-via="davkals">Tweet</a>
+</div>
+
+<script>
+if (document.location.hostname.indexOf("viennalunch.com") !== -1) {
+
+	// Twitter
+
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+		if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}
+	}(document, 'script', 'twitter-wjs');
+
+	// Google analytics
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-55397765-1', 'auto');
+	ga('send', 'pageview');
+
+}
+</script>
+<!--/ngInclude: 'views/partials/footer.html' -->
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/components.min.js"></script>
+
+  <script src="scripts/app.min.js"></script>
+
+
+<script src="scripts/views.tpl.min.js"></script>
+
+</body>
+
+</html>
