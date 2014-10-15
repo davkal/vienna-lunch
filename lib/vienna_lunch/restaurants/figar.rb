@@ -8,6 +8,6 @@ module ViennaLunch::Restaurants::Figar
   MENU_URL = 'https://www.facebook.com/feeds/page.php?id=719106121449593&format=json'
   
   def self.lunch()
-    return facebook_lunch(MENU_URL, /(heut|kochen|gibt|montag|dienstag|mittwoch|donnerstag|freitag)/i)
+    return facebook_lunch(MENU_URL, /(heut|kochen|gibt|montag|dienstag|mittwoch|donnerstag|freitag|today)/i)
   end
 end
