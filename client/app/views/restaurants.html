@@ -1,8 +1,23 @@
+
 <div class="row">
-	<div class="col-lg-3 col-md-4 col-sm-6" ng-repeat="restaurant in restaurants">
-		<div class="restaurant">
+	<div class="col-md-3" >
+		<div class="restaurant" ng-repeat="restaurant in restaurants1" ng-mouseover="onMouseOver()" ng-mouseout="onMouseOut()">
 		  <div class="restaurant-heading">
-		    <h3 class="restaurant-title">{{restaurant.name}}</h3>
+		    <h4 class="restaurant-title">{{restaurant.name}}</h4>
+		    <div class="address">{{restaurant.address}}</div>
+		  </div>
+		  <div class="restaurant-body" ng-bind-html="restaurant.lunch">
+		  </div>
+		</div>
+	</div>
+	<div class="col-md-6 hidden-xs">
+		<div ui-map="restaurantMap" ui-options="mapOptions" class="map-canvas"></div>
+	</div>
+	<div class="col-md-3" >
+		<div class="restaurant" ng-repeat="restaurant in restaurants2" ng-mouseover="onMouseOver()" ng-mouseout="onMouseOut()">
+		  <div class="restaurant-heading">
+		    <h4 class="restaurant-title">{{restaurant.name}}</h4>
+		    <div class="address">{{restaurant.address}}</div>
 		  </div>
 		  <div class="restaurant-body" ng-bind-html="restaurant.lunch">
 		  </div>
