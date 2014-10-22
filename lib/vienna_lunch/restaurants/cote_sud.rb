@@ -11,11 +11,11 @@ module ViennaLunch::Restaurants::CoteSud
 
   # mapping pdf lines to text boxes in columns in PDF
   DAY_MAPPING = {
-    1 => 1,
-    2 => 3,
-    3 => 5,
-    4 => 2,
-    5 => 4
+    1 => 0,
+    2 => 2,
+    3 => 4,
+    4 => 1,
+    5 => 3
   }
 
   def self.lunch
@@ -37,7 +37,7 @@ module ViennaLunch::Restaurants::CoteSud
       end
     end
 
-    index = DAY_MAPPING[Date.today.wday-1]
+    index = DAY_MAPPING[Date.today.wday]
     if index
       menu1 = menus1[index]
       menu2 = menus2[index]
