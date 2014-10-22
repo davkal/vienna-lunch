@@ -26,6 +26,6 @@ module ViennaLunch::Restaurants::Podium
       end
     end
 
-    return food.join(' ')
+    return food.join('<br>')
   end
 end

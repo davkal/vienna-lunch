@@ -22,7 +22,7 @@ module ViennaLunch::Restaurants::Ulrich
     first_tab.css('.menu-posts').each do |post|
       weekday = post.css('.category-title h2').text
       if WEEKDAYS.index(weekday) == weekday_today
-        food = post.css('.menu-title').map{ |el| el.text }.join(', ')
+        food = post.css('.menu-title').map{ |el| el.text }.join('<br>')
       end
     end
 

@@ -13,7 +13,7 @@ module ViennaLunch::Restaurants::Wirr
     weekday_today = Date.today.wday # skipping first <p>
     todays_menu = doc.css('.post-excerpt p')[weekday_today]
     if todays_menu
-      return todays_menu.text
+      return todays_menu.to_s
     else
       return ""
     end

@@ -18,7 +18,7 @@ module ViennaLunch::Restaurants::Steman
       menu1 = todays_menu.css('.hauptspeise').text
       menu2 = todays_menu.css('.tagesteller').text
 
-      return "Hauptspeise: #{menu1}, Tagesteller: #{menu2}"
+      return "Hauptspeise: #{menu1}<br>Tagesteller: #{menu2}"
     else
       return ""
     end
