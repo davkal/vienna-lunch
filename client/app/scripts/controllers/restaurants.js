@@ -18,14 +18,29 @@ angular.module('viennaLunch')
     		scale: 0.05
     	};
 
+        var restaurantsByDistrict = {};
+
     	var restaurants = Restaurant.query(function() {
         	var pivot = restaurants.length / 2;
 	        var map = $scope.restaurantMap;
 
-	        $scope.restaurants1 = restaurants.slice(0, pivot); 
-	        $scope.restaurants2 = restaurants.slice(pivot);
+
 
         	$.each(restaurants, function(i, restaurant) {
+
+		        // group restaurants by district
+
+		        var districtMatch = restaurant.address.match(/(\d{4})/);
+		        if (districtMatch) {
+		        	var district = districtMatch[0];
+		        	if(!restaurantsByDistrict[district]) {
+		        		restaurantsByDistrict[district] = [];
+		        	}
+		        	restaurantsByDistrict[district].push(restaurant);
+		        }
+
+		        // put restaurants on the map
+
         		var marker = new google.maps.Marker({
         			position: new google.maps.LatLng(restaurant.location[0],restaurant.location[1]),
 					map: map,
@@ -48,10 +63,25 @@ angular.module('viennaLunch')
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.open(map,marker);
 				});
-
 				restaurant.index = i;
 				markers.push(marker);
         	});
+
+			$scope.leftDistricts = ['1010', '1020', '1030', '1040', '1050', '1060'].map(function(zip) {
+				var restaurantsForDistrict = restaurantsByDistrict[zip];
+				if (restaurantsForDistrict) {
+					return {zip: zip, restaurants: restaurantsForDistrict};
+				}
+			}).filter(function(r){return r});
+			$scope.rightDistricts = ['1070', '1080', '1090'].map(function(zip) {
+				var restaurantsForDistrict = restaurantsByDistrict[zip];
+				if (restaurantsForDistrict) {
+					return {zip: zip, restaurants: restaurantsForDistrict};
+				}
+			}).filter(function(r){return r});
+
+			console.log($scope.leftDistricts);
+			console.log($scope.rightDistricts);
     	});
 
     	$scope.onMouseOver = function() {
