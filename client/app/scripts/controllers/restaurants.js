@@ -25,6 +25,7 @@ angular.module('viennaLunch')
 	        var map = $scope.restaurantMap;
 
         	$.each(restaurants, function(i, restaurant) {
+        		restaurant.notfound = !restaurant.lunch;
 
 		        // group restaurants by district
 
