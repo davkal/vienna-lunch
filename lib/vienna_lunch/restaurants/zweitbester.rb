@@ -9,6 +9,7 @@ module ViennaLunch::Restaurants::Zweitbester
   MENU_URL = 'https://www.facebook.com/feeds/page.php?id=245555312167202&format=json'
   
   def self.lunch
-    return facebook_lunch(MENU_URL, /TAGESKARTE/i)
+    @lunch = facebook_lunch(MENU_URL, /TAGESKARTE/i)
+    return @lunch.split('GETRÄNKE').first
   end
 end
