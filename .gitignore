@@ -20,3 +20,6 @@
 # Ignore ruby environment
 /.ruby-version
 /.ruby-gemset
+
+# Sublime text
+/vienna-lunch.sublime-workspace
