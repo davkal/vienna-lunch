@@ -73,15 +73,13 @@ angular.module('viennaLunch')
 					return {zip: zip, restaurants: restaurantsForDistrict};
 				}
 			}).filter(function(r){return r});
+
 			$scope.rightDistricts = ['1070', '1080', '1090'].map(function(zip) {
 				var restaurantsForDistrict = restaurantsByDistrict[zip];
 				if (restaurantsForDistrict) {
 					return {zip: zip, restaurants: restaurantsForDistrict};
 				}
 			}).filter(function(r){return r});
-
-			console.log($scope.leftDistricts);
-			console.log($scope.rightDistricts);
     	});
 
     	$scope.onMouseOver = function() {
