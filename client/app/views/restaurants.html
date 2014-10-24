@@ -7,7 +7,10 @@
 				ng-mouseenter="onMouseOver()" ng-mouseleave="onMouseOut()">
 			  <div class="restaurant-heading">
 			    <h4 class="restaurant-title">{{restaurant.name}}</h4>
-			    <div class="address">{{restaurant.address}}</div>
+			    <div class="address">
+			    	{{restaurant.address}} 
+			    	<a href="{{restaurant.url}}" target="{{restaurant.name}}"><span class="glyphicon glyphicon-cutlery"></span></a>
+			    </div>
 			  </div>
 			  <div class="restaurant-body" ng-bind-html="restaurant.lunch">
 			  </div>
@@ -24,7 +27,10 @@
 				ng-mouseenter="onMouseOver()" ng-mouseleave="onMouseOut()">
 			  <div class="restaurant-heading">
 			    <h4 class="restaurant-title">{{restaurant.name}}</h4>
-			    <div class="address">{{restaurant.address}}</div>
+			    <div class="address">
+			    	{{restaurant.address}} 
+			    	<a href="{{restaurant.url}}" target="{{restaurant.name}}"><span class="glyphicon glyphicon-cutlery"></span></a>
+			    </div>
 			  </div>
 			  <div class="restaurant-body" ng-bind-html="restaurant.lunch">
 			  </div>

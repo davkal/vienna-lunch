@@ -27,6 +27,7 @@ module ViennaLunch::Restaurants
         name: restaurant::NAME,
         address: restaurant::ADDRESS,
         location: restaurant::LOCATION,
+        url: restaurant::URL,
         lunch: restaurant::lunch,
       }
     end

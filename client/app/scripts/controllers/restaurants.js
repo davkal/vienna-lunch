@@ -24,8 +24,6 @@ angular.module('viennaLunch')
         	var pivot = restaurants.length / 2;
 	        var map = $scope.restaurantMap;
 
-
-
         	$.each(restaurants, function(i, restaurant) {
 
 		        // group restaurants by district
