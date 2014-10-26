@@ -3,10 +3,10 @@ This is a web app to show the daily lunch menus of a selection of restaurants in
 
 You can suggest a new restaurant by opening an issue. Or, if you have basic Ruby skills, open a pull request.
 
-If you don’t happen to live in Vienna, you can just fork the repo and replace the restaurant files.
-
 Its backend is a Ruby-on-Rails app that uses the restaurants’ Facebook feeds and websites to pull today’s lunch menu.
 The frontend is an AngularJS app that shows the menus in columns as well as on a Google map.
+
+*If you don’t happen to live in Vienna, you can just fork the repo and replace the restaurant files.*
 
 ## Contributing
 To add a new restaurant just open a pull request.
@@ -31,3 +31,8 @@ The files have to be put in a certain place:
 * A test file should be added under `spec/restaurants`. This can then be run with `rspec spec/restaurants/NAME_spec.rb`. 
 
 In the user interface (`client/`) no change is needed.
+
+### Screen scraping API
+* For Facebook pages, the page’s RSS feed is used. For that you need to look up the Facebook ID of the restaurant page and put that in the `MENU_URL`.
+* For scraping the HTML of the restaurant’s website, just use [Nokogiri](http://www.rubydoc.info/github/sparklemotion/nokogiri)
+* For PDF menus, I included the [wrapper](http://blog.peschla.net/2014/04/parsing-pdf-text-with-coordinates-in-ruby/) as [`pdf_helper.rb`](lib/pdf_helper.rb) which is based on [pdf-reader](https://github.com/yob/pdf-reader). 
