@@ -1,4 +1,7 @@
 # Vienna Lunch
+
+![Screenshot](screenshot.png?raw=true)
+
 This is a web app to show the daily lunch menus of a selection of restaurants in Vienna.
 
 You can suggest a new restaurant by opening an issue. Or, if you have basic Ruby skills, open a pull request.
