@@ -22,6 +22,12 @@ To add a new restaurant just open a pull request.
 * Start the JS build environment in `client/` via `gulp serve`
 * Point your browser to `http://localhost:9000`
 
+### Use of Facebook API
+
+Facebook now requires all requests to the graph API to have a valid access token.
+If you want to add/maintain restaurants that publish their menu on their Facebook page, you need to get an App Access Token from `https://developers.facebook.com/apps/`.
+To run the app or the tests, you need to have `FB_APP_ID` and `FB_CLIENT_SECRET` set as environment variables.
+
 ### Adding a restaurant
 Restaurants publish the lunch menus in different ways, e.g., their Facebook page or their website. The data source for the restaurant should be reliable and consistent in its publication week after week.
 For a new restaurant, a Ruby script needs to be added. Depending on the data source, have a look at the existing scripts:
@@ -31,7 +37,7 @@ For a new restaurant, a Ruby script needs to be added. Depending on the data sou
 
 The files have to be put in a certain place:
 * The new restaurant script needs to be placed under `lib/vienna_lunch/restaurants` and then added to `lib/vienna_lunch/restaurants.rb`.
-* A test file should be added under `spec/restaurants`. This can then be run with `rspec spec/restaurants/NAME_spec.rb`. 
+* A test file should be added under `spec/restaurants`. This can then be run with `FB_APP_ID=your-app-id FB_APP_ID=your-client-secret rspec spec/restaurants/NAME_spec.rb`. 
 
 In the user interface (`client/`) no change is needed.
 

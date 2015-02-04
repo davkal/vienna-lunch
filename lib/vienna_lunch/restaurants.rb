@@ -39,12 +39,18 @@ end
 def facebook_lunch(url, words = nil)
   food = ''
   today = Date.today.to_s
+
+  # append FB access token
+  app_id = ENV["FB_APP_ID"]
+  client_secret = ENV["FB_CLIENT_SECRET"]
+  url = "#{url}access_token=#{app_id}%7C#{client_secret}"
+
   hash = JSON.load(open(url))
 
-  hash['entries'].each do |entry|
-    if entry['updated'][today]
-      if words && entry['content'][words]
-        food = entry['content']
+  hash['data'].each do |entry|
+    if entry['updated_time'][today]
+      if words && entry['message'][words]
+        food = entry['message']
         break
       end
     end
