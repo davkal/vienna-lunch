@@ -6,6 +6,7 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::CoteSud,
     ViennaLunch::Restaurants::Figar,
     ViennaLunch::Restaurants::Podium,
+    ViennaLunch::Restaurants::Reisingers,
     ViennaLunch::Restaurants::Salzberg,
     ViennaLunch::Restaurants::Steman,
     ViennaLunch::Restaurants::Ulrich,
