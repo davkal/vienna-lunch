@@ -66,14 +66,14 @@ angular.module('viennaLunch')
 				markers.push(marker);
         	});
 
-			$scope.leftDistricts = ['1010', '1020', '1030', '1040', '1050', '1060'].map(function(zip) {
+			$scope.leftDistricts = ['1010', '1020', '1030', '1040', '1050'].map(function(zip) {
 				var restaurantsForDistrict = restaurantsByDistrict[zip];
 				if (restaurantsForDistrict) {
 					return {zip: zip, restaurants: restaurantsForDistrict};
 				}
 			}).filter(function(r){return r});
 
-			$scope.rightDistricts = ['1070', '1080', '1090'].map(function(zip) {
+			$scope.rightDistricts = ['1060', '1070', '1080', '1090'].map(function(zip) {
 				var restaurantsForDistrict = restaurantsByDistrict[zip];
 				if (restaurantsForDistrict) {
 					return {zip: zip, restaurants: restaurantsForDistrict};
@@ -92,10 +92,9 @@ angular.module('viennaLunch')
     	};
 
         $scope.mapOptions = {
-        	center: new google.maps.LatLng(48.1975, 16.352314),
+        	center: new google.maps.LatLng(48.199, 16.355),
 			zoom: 15,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			disableDefaultUI: true,
 			styles: [
 			  {
 			    featureType: "all",
