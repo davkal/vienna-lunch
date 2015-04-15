@@ -21,7 +21,7 @@ module ViennaLunch::Restaurants::Wirr
 
     weekday_today = Date.today.wday - 1  # monday should be 0
     span = 4 # starter, veg, meat, dessert
-    offset = weekday_today * span + 2
+    offset = weekday_today * span + 1
     paragraphs = doc.css('.post-excerpt p')
     todays_menu = ""
     todays_menu << paragraphs[offset]
