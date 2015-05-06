@@ -57,9 +57,14 @@ def facebook_lunch(url, words = nil)
   hash = JSON.load(open(url))
 
   hash['data'].each do |entry|
-    if entry['updated_time'][today]
+    if entry['updated_time'][today] # only interested in today's entries
       if words && entry['message'] && entry['message'][words]
         food = entry['message']
+        if entry['picture']
+          puts entry
+          pic_src = entry['picture']
+          food = "#{food}<br><img src=\"#{pic_src}\">"
+        end
         break
       end
     end
