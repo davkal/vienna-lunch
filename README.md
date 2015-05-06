@@ -18,7 +18,7 @@ To add a new restaurant just open a pull request.
 * Clone the repo
 * Set up RVM for Rails 4.1 and Ruby 2.1, then run `bundler install`
 * In the `client/` directory run `bower install`.
-* Start the rails server
+* Start the rails server `FB_APP_ID=your-app-id FB_APP_ID=your-client-secret rails s --env=production` (if you leave out the `--env` it will use test menus from `lib/vienna_lunch/support/restaurants.json`, so you can leave it out if you just want to develop the UI)
 * Start the JS build environment in `client/` via `gulp serve`
 * Point your browser to `http://localhost:9000`
 
