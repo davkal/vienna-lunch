@@ -24,6 +24,8 @@ angular.module('viennaLunch')
         	var pivot = restaurants.length / 2;
 	        var map = $scope.restaurantMap;
 
+            $scope.restaurantCount = restaurants.length;
+
         	$.each(restaurants, function(i, restaurant) {
         		restaurant.notfound = !restaurant.lunch;
 
