@@ -42,6 +42,6 @@ The files have to be put in a certain place:
 In the user interface (`client/`) no change is needed.
 
 ### Screen scraping API
-* For Facebook pages, the page’s RSS feed is used. For that you need to look up the Facebook ID of the restaurant page and put that in the `MENU_URL`.
+* For Facebook pages, the page’s RSS feed is used. For that you need to look up the Facebook ID of the restaurant page and put that in the `MENU_URL`. [This website](http://findmyfacebookid.com/) can help you find the ID based on the page.
 * For scraping the HTML of the restaurant’s website, just use [Nokogiri](http://www.rubydoc.info/github/sparklemotion/nokogiri)
 * For PDF menus, I included this [wrapper as `pdf_helper.rb`](http://blog.peschla.net/2014/04/parsing-pdf-text-with-coordinates-in-ruby/) which is based on [pdf-reader](https://github.com/yob/pdf-reader). 
