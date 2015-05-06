@@ -11,10 +11,9 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::Salzberg,
     ViennaLunch::Restaurants::Steman,
     ViennaLunch::Restaurants::Ulrich,
+    ViennaLunch::Restaurants::VictusUndMili,
     ViennaLunch::Restaurants::Wirr,
     ViennaLunch::Restaurants::Woracziczky,
-    ViennaLunch::Restaurants::Zweitbester,
-    ViennaLunch::Restaurants::VictusUndMili,
     ViennaLunch::Restaurants::Zweitbester
   ]
 
