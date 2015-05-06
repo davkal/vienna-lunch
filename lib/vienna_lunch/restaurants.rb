@@ -12,7 +12,8 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::Ulrich,
     ViennaLunch::Restaurants::Wirr,
     ViennaLunch::Restaurants::Woracziczky,
-    ViennaLunch::Restaurants::Zweitbester
+    ViennaLunch::Restaurants::Zweitbester,
+    ViennaLunch::Restaurants::VictusUndMili
   ]
 
   def self.load_all
