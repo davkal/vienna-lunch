@@ -42,7 +42,7 @@ module ViennaLunch::Restaurants::CoteSud
       menu1 = menus1[index]
       menu2 = menus2[index]
 
-      return "#{menu1}<br>#{menu2}"
+      return "(EXPERIMENTAL)<br>#{menu1}<br>#{menu2}"
     else
       return ""
     end
