@@ -14,7 +14,7 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::VictusUndMili,
     ViennaLunch::Restaurants::Wirr,
     ViennaLunch::Restaurants::Woracziczky,
-    ViennaLunch::Restaurants::Zweitbester
+    ViennaLunch::Restaurants::Zweitbester,
   ]
 
   def self.load_all
@@ -26,12 +26,18 @@ module ViennaLunch::Restaurants
     #end
 
     return LIST.map do |restaurant|
+      begin
+        lunch = restaurant::lunch
+      rescue
+        lunch = "(error finding lunch)"
+      end
+
       {
         name: restaurant::NAME,
         address: restaurant::ADDRESS,
         location: restaurant::LOCATION,
         url: restaurant::URL,
-        lunch: restaurant::lunch,
+        lunch: lunch,
       }
     end
   end
