@@ -63,7 +63,8 @@ def facebook_lunch(url, words = nil)
         if entry['picture']
           puts entry
           pic_src = entry['picture']
-          food = "#{food}<br><img src=\"#{pic_src}\">"
+          link_url = entry['link']
+          food = "#{food}<br><a href=\"#{link_url}\" target=\"_blank\"><img src=\"#{pic_src}\"></a>"
         end
         break
       end
