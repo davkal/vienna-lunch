@@ -3,6 +3,7 @@ require 'open-uri'
 module ViennaLunch::Restaurants
   GLOB = "lib/vienna_lunch/restaurants/*.rb"
   LIST = [
+    ViennaLunch::Restaurants::MaranVegan,
     ViennaLunch::Restaurants::CafePierre,
     ViennaLunch::Restaurants::CoteSud,
     ViennaLunch::Restaurants::Figar,
@@ -43,18 +44,20 @@ module ViennaLunch::Restaurants
   end
 end
 
-
-# look for lunch in FB feed entries
-def facebook_lunch(url, words = nil)
-  food = ''
-  today = Date.today.to_s
-
+def facebook_feed(url)
   # append FB access token
   app_id = ENV["FB_APP_ID"]
   client_secret = ENV["FB_CLIENT_SECRET"]
   url = "#{url}access_token=#{app_id}%7C#{client_secret}"
 
   hash = JSON.load(open(url))
+end
+
+# look for lunch in FB feed entries
+def facebook_lunch(url, words = nil)
+  food = ''
+  today = Date.today.to_s
+  hash = facebook_feed(url)
 
   hash['data'].each do |entry|
     if entry['updated_time'][today] # only interested in today's entries
