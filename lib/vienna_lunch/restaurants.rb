@@ -12,6 +12,7 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::Marks,
     ViennaLunch::Restaurants::Podium,
     ViennaLunch::Restaurants::Reisingers,
+    ViennaLunch::Restaurants::SalonWichtig,
     ViennaLunch::Restaurants::Salzberg,
     ViennaLunch::Restaurants::Steman,
     ViennaLunch::Restaurants::Ulrich,
