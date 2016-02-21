@@ -6,6 +6,7 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::BMax,
     ViennaLunch::Restaurants::CoteSud,
     ViennaLunch::Restaurants::Figar,
+    ViennaLunch::Restaurants::HaseUndIgel,
     ViennaLunch::Restaurants::MaranVegan,
     ViennaLunch::Restaurants::Marks,
     ViennaLunch::Restaurants::Podium,
