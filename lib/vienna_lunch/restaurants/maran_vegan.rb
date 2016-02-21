@@ -5,24 +5,9 @@ module ViennaLunch::Restaurants::MaranVegan
   ADDRESS = "Stumpergasse 57, 1060 Wien"
   LOCATION = [48.1954,16.34273]
   URL = "https://www.facebook.com/maranvegan"
-  MENU_URL = 'https://graph.facebook.com/v2.3/117745871753480/feed?'
+  MENU_URL = 'https://graph.facebook.com/v2.2/117745871753480/feed?'
 
   def self.lunch()
-    food = ''
-    today = Date.today.day
-    hash = facebook_feed(MENU_URL)
-
-    hash['data'].each do |entry|
-      if entry['message'] && entry['message'][/(Menüplan)/i]
-        days = entry['message'].split("\n\n")
-        days.each do |day|
-          if day.include? "#{today}."
-            food = day
-            break
-          end
-        end
-      end
-    end
-    food
+    return facebook_lunch(MENU_URL, /(montag,|dienstag,|mittwoch,|donnerstag,|freitag,)/i)
   end
 end
