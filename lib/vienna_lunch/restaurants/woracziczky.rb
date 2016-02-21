@@ -9,6 +9,6 @@ module ViennaLunch::Restaurants::Woracziczky
   MENU_URL = 'https://graph.facebook.com/v2.2/350394680695/feed?'
   
   def self.lunch
-    return facebook_lunch(MENU_URL, /(menü|heut|mittag|montag|dienstag|mittwoch|donnerstag|freitag|wochenende)/i)
+    return facebook_lunch(MENU_URL, /(starten|menü|heut|mittag|montag|dienstag|mittwoch|donnerstag|freitag|wochenende)/i)
   end
 end
