@@ -4,6 +4,7 @@ module ViennaLunch::Restaurants
   GLOB = "lib/vienna_lunch/restaurants/*.rb"
   LIST = [
     ViennaLunch::Restaurants::BMax,
+    ViennaLunch::Restaurants::Chimbiss,
     ViennaLunch::Restaurants::CoteSud,
     ViennaLunch::Restaurants::Figar,
     ViennaLunch::Restaurants::HaseUndIgel,
