@@ -3,6 +3,7 @@ require 'open-uri'
 module ViennaLunch::Restaurants
   GLOB = "lib/vienna_lunch/restaurants/*.rb"
   LIST = [
+    ViennaLunch::Restaurants::BMax,
     ViennaLunch::Restaurants::CoteSud,
     ViennaLunch::Restaurants::Figar,
     ViennaLunch::Restaurants::MaranVegan,
