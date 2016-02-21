@@ -7,6 +7,7 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::CoteSud,
     ViennaLunch::Restaurants::Figar,
     ViennaLunch::Restaurants::MaranVegan,
+    ViennaLunch::Restaurants::Marks,
     ViennaLunch::Restaurants::Podium,
     ViennaLunch::Restaurants::Reisingers,
     ViennaLunch::Restaurants::Salzberg,
