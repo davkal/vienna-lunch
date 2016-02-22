@@ -15,8 +15,9 @@ The frontend is an AngularJS app that shows the menus in columns as well as on a
 To add a new restaurant just open a pull request.
 
 ### Setup
+* Make sure you have libxml2 and friends installed: `brew install libxslt`
 * Clone the repo
-* Set up RVM for Rails 4.1 and Ruby 2.1, then run `bundler install`
+* Set up Rails 4.1 and Ruby 2.1, e.g. `rbenv install 2.1.3 && rbenv local 2.1.3` then run `bundler install`
 * In the `client/` directory run `bower install`.
 * Start the rails server `FB_APP_ID=your-app-id FB_APP_ID=your-client-secret rails s --env=production` (if you leave out the `--env` it will use test menus from `lib/vienna_lunch/support/restaurants.json`, so you can leave it out if you just want to develop the UI)
 * Start the JS build environment in `client/` via `gulp serve`
