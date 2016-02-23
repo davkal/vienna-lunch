@@ -5,7 +5,7 @@ module ViennaLunch::Restaurants
   LIST = [
     ViennaLunch::Restaurants::BMax,
     ViennaLunch::Restaurants::Chimbiss,
-    ViennaLunch::Restaurants::CoteSud,
+    # ViennaLunch::Restaurants::CoteSud,
     ViennaLunch::Restaurants::Figar,
     ViennaLunch::Restaurants::HaseUndIgel,
     ViennaLunch::Restaurants::MaranVegan,
@@ -13,7 +13,7 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::Podium,
     ViennaLunch::Restaurants::Reisingers,
     ViennaLunch::Restaurants::SalonWichtig,
-    ViennaLunch::Restaurants::Salzberg,
+    # ViennaLunch::Restaurants::Salzberg,
     ViennaLunch::Restaurants::Steman,
     ViennaLunch::Restaurants::Ulrich,
     ViennaLunch::Restaurants::VictusUndMili,
