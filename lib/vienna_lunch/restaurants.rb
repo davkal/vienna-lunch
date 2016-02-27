@@ -15,6 +15,7 @@ module ViennaLunch::Restaurants
     ViennaLunch::Restaurants::SalonWichtig,
     # ViennaLunch::Restaurants::Salzberg,
     ViennaLunch::Restaurants::Steman,
+    ViennaLunch::Restaurants::Strudls,
     ViennaLunch::Restaurants::Ulrich,
     ViennaLunch::Restaurants::VictusUndMili,
     ViennaLunch::Restaurants::Wirr,
